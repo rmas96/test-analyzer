@@ -1,0 +1,4 @@
+test_id,test_name,status,duration_ms,error_message
+1,PowerOnTest,PASS,120,
+2,AudioOutputTest,FAIL,340,Output level below threshold
+3,NetworkInit,ERROR,50,Timeout during initialization
