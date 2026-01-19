@@ -19,14 +19,7 @@ def analyze_results(results: List[Dict]) -> Dict:
     total_duration = sum(r["duration_ms"] for r in results)
     average_duration = total_duration / total if total > 0 else 0
 
-    failed_tests = [
-        {
-            "test_id": r["test_id"], 
-            "test_name": r["test_name"], 
-            "duration_ms": r["duration_ms"]
-        }
-        for r in results if r["status"] == "FAIL"
-    ]
+    failed_tests = [r for r in results if r["status"] != "PASS"]
 
     success_rate = (passed / total * 100) if total > 0 else 0
 
